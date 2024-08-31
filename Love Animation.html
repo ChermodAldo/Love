@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Hearts Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: fall 5s linear infinite, heartbeat 1.5s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -7.5px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 7.5px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            25% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+            50% {
+                transform: scale(0.9) rotate(-45deg);
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 1;
+                transform: translateX(0) rotate(-45deg);
+            }
+            100% {
+                top: 110%;
+                opacity: 0;
+                transform: translateX(100px) rotate(-45deg);
+            }
+        }
+
+        /* Generate many hearts */
+        .hearts-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hearts-container .heart {
+            top: -10%;
+            left: calc(100% * var(--i) / 50);
+            animation-duration: calc(3s + var(--i) * 0.2s);
+            animation-delay: calc(var(--i) * 0.1s);
+            width: calc(15px + var(--i) * 0.3px);
+            height: calc(15px + var(--i) * 0.3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-container">
+        <!-- Generate 50 hearts with different positions and animation properties -->
+        <div class="heart" style="--i: 1;"></div>
+        <div class="heart" style="--i: 2;"></div>
+        <div class="heart" style="--i: 3;"></div>
+        <div class="heart" style="--i: 4;"></div>
+        <div class="heart" style="--i: 5;"></div>
+        <div class="heart" style="--i: 6;"></div>
+        <div class="heart" style="--i: 7;"></div>
+        <div class="heart" style="--i: 8;"></div>
+        <div class="heart" style="--i: 9;"></div>
+        <div class="heart" style="--i: 10;"></div>
+        <div class="heart" style="--i: 11;"></div>
+        <div class="heart" style="--i: 12;"></div>
+        <div class="heart" style="--i: 13;"></div>
+        <div class="heart" style="--i: 14;"></div>
+        <div class="heart" style="--i: 15;"></div>
+        <div class="heart" style="--i: 16;"></div>
+        <div class="heart" style="--i: 17;"></div>
+        <div class="heart" style="--i: 18;"></div>
+        <div class="heart" style="--i: 19;"></div>
+        <div class="heart" style="--i: 20;"></div>
+        <div class="heart" style="--i: 21;"></div>
+        <div class="heart" style="--i: 22;"></div>
+        <div class="heart" style="--i: 23;"></div>
+        <div class="heart" style="--i: 24;"></div>
+        <div class="heart" style="--i: 25;"></div>
+        <div class="heart" style="--i: 26;"></div>
+        <div class="heart" style="--i: 27;"></div>
+        <div class="heart" style="--i: 28;"></div>
+        <div class="heart" style="--i: 29;"></div>
+        <div class="heart" style="--i: 30;"></div>
+        <div class="heart" style="--i: 31;"></div>
+        <div class="heart" style="--i: 32;"></div>
+        <div class="heart" style="--i: 33;"></div>
+        <div class="heart" style="--i: 34;"></div>
+        <div class="heart" style="--i: 35;"></div>
+        <div class="heart" style="--i: 36;"></div>
+        <div class="heart" style="--i: 37;"></div>
+        <div class="heart" style="--i: 38;"></div>
+        <div class="heart" style="--i: 39;"></div>
+        <div class="heart" style="--i: 40;"></div>
+        <div class="heart" style="--i: 41;"></div>
+        <div class="heart" style="--i: 42;"></div>
+        <div class="heart" style="--i: 43;"></div>
+        <div class="heart" style="--i: 44;"></div>
+        <div class="heart" style="--i: 45;"></div>
+        <div class="heart" style="--i: 46;"></div>
+        <div class="heart" style="--i: 47;"></div>
+        <div class="heart" style="--i: 48;"></div>
+        <div class="heart" style="--i: 49;"></div>
+        <div class="heart" style="--i: 50;"></div>
+    </div>
+</body>
+  </html>
